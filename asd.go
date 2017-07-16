@@ -62,6 +62,11 @@ func generateCommands(c *cli.Context) (string, error) {
 	} else {
 		buffer.WriteString("bash -s << EOF \n")
 	}
+	var keys []string
+	for _, e := range arr {
+		keys = append(keys, e.key)
+	}
+	fmt.Printf("Installing modules: %v\n", keys)
 
 	for _, e := range arr {
 		for _, command := range e.commands {

@@ -37,7 +37,6 @@ func getInfo(key string) (info ModuleNode) {
 	// read from yaml
 	c := conf{}
 	dir := path.Join(config.ModulePath, key)
-	log.Printf("Getting info from %v for %v", dir, key)
 	if _, err := os.Stat(dir); os.IsNotExist(err) {
 		command := fmt.Sprintf("sudo apt-get install %s", key)
 		return ModuleNode{key: key, commands: []string{command}}

@@ -16,7 +16,7 @@ func main() {
 			Usage:  "Installs given modules into the remote server",
 			Action: CliInstall,
 			Flags: []cli.Flag{
-				cli.StringFlag{Name: "remote, h", Usage: "Install into a remote instance via ssh"},
+				cli.StringFlag{Name: "remote, r", Usage: "Install into a remote instance via ssh"},
 			},
 		},
 		{
