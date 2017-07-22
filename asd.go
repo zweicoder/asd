@@ -6,7 +6,7 @@ import (
 	"github.com/urfave/cli"
 	"github.com/zweicoder/asd/config"
 	"github.com/zweicoder/asd/utils"
-	"log"
+	// "log"
 	"os"
 	"os/exec"
 	"path/filepath"
