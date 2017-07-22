@@ -118,7 +118,7 @@ func CliInstall(c *cli.Context) error {
 		return e
 	}
 
-	log.Printf("commands to run: %v\n", commands)
+	// log.Printf("commands to run: %v\n", commands)
 	if e != nil {
 		return e
 	}

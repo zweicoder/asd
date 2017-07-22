@@ -10,10 +10,14 @@ The scripts in [asd-modules](https://github.com/zweicoder/asd-modules) currently
 Download the binary [here](https://github.com/zweicoder/asd/raw/master/bin/asd) and drop it somewhere in your PATH, like `/usr/local/bin`
 
 ## Usage
-Currently the only thing this does is simple dependency resolution and generating the script. It can't run the installation commands because there's no good way to pass in a large string of `bash` commands into `os/exec`
 
-Generate the script
+Installing modules directly
+```
+# Installs gopass, docker and docker-compose locally
+asd install gopass docker-compose
+```
 
+Generating the `install.sh` script (for debugging / inspecting)
 ```
 # Generates an install script with commands to install docker, then drone
 asd gen drone
