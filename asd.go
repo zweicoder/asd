@@ -8,6 +8,7 @@ import (
 	"github.com/zweicoder/asd/utils"
 	"log"
 	"os"
+	"os/exec"
 	"path/filepath"
 )
 
@@ -118,5 +119,28 @@ func CliInstall(c *cli.Context) error {
 	}
 
 	log.Printf("commands to run: %v\n", commands)
+	if e != nil {
+		return e
+	}
+
+	var f *os.File
+	if pathFlag := c.String("path"); pathFlag != "" {
+		path, e := filepath.Abs(pathFlag)
+		if e != nil {
+			return e
+		}
+		f, e = os.Create(path)
+	} else {
+		f, e = os.Create("/tmp/install.sh")
+	}
+	defer f.Close()
+	f.WriteString(commands)
+	cmd := exec.Command("bash", "/tmp/install.sh")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	e = cmd.Run()
+	if e != nil {
+		return e
+	}
 	return nil
 }
