@@ -7,7 +7,9 @@ The scripts in [asd-modules](https://github.com/zweicoder/asd-modules) currently
 
 
 ## Installation
-Download the binary [here](https://github.com/zweicoder/asd/raw/master/bin/asd) and drop it somewhere in your PATH, like `/usr/local/bin`
+Download the binary [here](https://github.com/zweicoder/asd/raw/master/bin/asd) and drop it somewhere in your PATH, like `~/bin` or `/usr/local/bin`
+
+`wget -P ~/bin https://github.com/zweicoder/asd/raw/master/bin/asd `
 
 ## Usage
 
